@@ -19,11 +19,11 @@ def home(request):
 
 	xaxis=[]
 	yaxis=[]
-	data = dd.objects.filter(System_RID_No='9001')[:10]
-	t_GPower = dd.objects.filter(System_RID_No='9001').aggregate(Sum('Gross_KWH')).get('Gross_KWH__sum')
-	t_InvPower = dd.objects.filter(System_RID_No='9001').aggregate(Sum('Inverter_Output_KWH')).get('Inverter_Output_KWH__sum')
-	t_PumpPower = dd.objects.filter(System_RID_No='9001').aggregate(Sum('Pump_Consumption_KWH')).get('Pump_Consumption_KWH__sum')
-	t_PumpLtrs = dd.objects.filter(System_RID_No='9001').aggregate(Sum('Water_Discharge_Lts')).get('Water_Discharge_Lts__sum')
+	data = dd.objects.filter(System_RID_No='11786')[:10]
+	t_GPower = dd.objects.filter(System_RID_No='11786').aggregate(Sum('Gross_KWH')).get('Gross_KWH__sum')
+	t_InvPower = dd.objects.filter(System_RID_No='11786').aggregate(Sum('Inverter_Output_KWH')).get('Inverter_Output_KWH__sum')
+	t_PumpPower = dd.objects.filter(System_RID_No='11786').aggregate(Sum('Pump_Consumption_KWH')).get('Pump_Consumption_KWH__sum')
+	t_PumpLtrs = dd.objects.filter(System_RID_No='11786').aggregate(Sum('Water_Discharge_Lts')).get('Water_Discharge_Lts__sum')
 
 	for x in data:
 		xaxis.append(str(x.Date))
